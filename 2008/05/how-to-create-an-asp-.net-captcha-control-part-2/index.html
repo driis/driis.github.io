@@ -20,20 +20,20 @@ As described in the first post, the idea is to create an image showing a word, a
 Image generation approach
 As described in the first post, the idea is to create an image showing a word, and let the user repeat it by typing it into a textbox." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.driis.dk/2008/05/how-to-create-an-asp-.net-captcha-control-part-2/" />
+<meta property="og:url" content="/2008/05/how-to-create-an-asp-.net-captcha-control-part-2/" />
 <meta property="article:published_time" content="2008-05-04T19:28:45+00:00" />
 <meta property="article:modified_time" content="2008-05-04T19:28:45+00:00" />
 
 
     
-      <base href="https://www.driis.dk/2008/05/how-to-create-an-asp-.net-captcha-control-part-2/">
+      <base href="/2008/05/how-to-create-an-asp-.net-captcha-control-part-2/">
     
     <title>
   How to create an ASP .NET Captcha Control (part 2) · Dennis Riis Personal Site
 </title>
 
     
-      <link rel="canonical" href="https://www.driis.dk/2008/05/how-to-create-an-asp-.net-captcha-control-part-2/">
+      <link rel="canonical" href="/2008/05/how-to-create-an-asp-.net-captcha-control-part-2/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@ As described in the first post, the idea is to create an image showing a word, a
     
       
       
-      <link rel="stylesheet" href="https://www.driis.dk/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
     
 
     
@@ -51,15 +51,15 @@ As described in the first post, the idea is to create an image showing a word, a
     
 
     
-      <link rel="stylesheet" href="https://www.driis.dk/css/custom.css" />
+      <link rel="stylesheet" href="/css/custom.css" />
     
 
     
 
     
 
-    <link rel="icon" type="image/png" href="https://www.driis.dk/img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://www.driis.dk/img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
 
     <meta name="generator" content="Hugo 0.68.3" />
   </head>
@@ -70,7 +70,7 @@ As described in the first post, the idea is to create an image showing a word, a
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://www.driis.dk/">
+    <a class="navigation-title" href="/">
       Dennis Riis Personal Site
     </a>
     
@@ -80,11 +80,11 @@ As described in the first post, the idea is to create an image showing a word, a
       
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://www.driis.dk/posts/">Blog</a>
+            <a class="navigation-link" href="/posts/">Blog</a>
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://www.driis.dk/about/">About</a>
+            <a class="navigation-link" href="/about/">About</a>
           </li>
         
       
@@ -125,8 +125,8 @@ As described in the first post, the idea is to create an image showing a word, a
         
         
 		<p>
-				<a href="https://www.driis.dk/2008/4/HowToCreateCaptcha.aspx">
-				</a>This is the second in a&nbsp;3 part series on how to create an ASP .NET Captcha control. The <a href="https://www.driis.dk/2008/4/HowToCreateCaptcha.aspx">previous post can be found here</a>. This time we will look at how the CAPTCHA image can be generated using the built-in .NET framework classes.</p>
+				<a href="/2008/4/HowToCreateCaptcha.aspx">
+				</a>This is the second in a&nbsp;3 part series on how to create an ASP .NET Captcha control. The <a href="/2008/4/HowToCreateCaptcha.aspx">previous post can be found here</a>. This time we will look at how the CAPTCHA image can be generated using the built-in .NET framework classes.</p>
 <p><strong>Image generation approach<br /></strong>As described in the first post, the idea is to create an image showing a word, and let the user repeat it by typing it into a textbox. The image should be hard to read for OCR software, so that the CAPTCHA is hard to beat for automated bots. The way we will be doing this, is by stretching and warping the text, and adding noise. Luckily, this is easy to accomplish by using the GraphicsPath class to draw the string, and then use the Warp method on the GraphicsPath object.</p>
 <p><strong>Generating the image: Step by step<br /></strong>The first step in generating the image is to create a Bitmap object with the appropiate dimensions. We will also need a Font for the text, and a Brush for painting the text. I also declare a rectangle that is slightly smaller than the actual image, which will be used as the drawing bounds later. This will help to ensure, that the text fits on the image after the transformations:</p>
 <p><!-- code formatted by http://manoli.net/csharpformat/ --></p>

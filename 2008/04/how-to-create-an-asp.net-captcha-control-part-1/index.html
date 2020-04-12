@@ -20,20 +20,20 @@ There are some variations on CAPTCHA tests, the most common one requiring the us
 Preparations
 There are some variations on CAPTCHA tests, the most common one requiring the user to input the characters displayed on an image. The idea is that only a human will be able to read these characters; so if the challenge response is correct, it is most likely a &quot;real human&quot; submitting the data." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.driis.dk/2008/04/how-to-create-an-asp.net-captcha-control-part-1/" />
+<meta property="og:url" content="/2008/04/how-to-create-an-asp.net-captcha-control-part-1/" />
 <meta property="article:published_time" content="2008-04-13T17:40:46+00:00" />
 <meta property="article:modified_time" content="2008-04-13T17:40:46+00:00" />
 
 
     
-      <base href="https://www.driis.dk/2008/04/how-to-create-an-asp.net-captcha-control-part-1/">
+      <base href="/2008/04/how-to-create-an-asp.net-captcha-control-part-1/">
     
     <title>
   How to: Create an ASP.NET CAPTCHA Control (part 1) · Dennis Riis Personal Site
 </title>
 
     
-      <link rel="canonical" href="https://www.driis.dk/2008/04/how-to-create-an-asp.net-captcha-control-part-1/">
+      <link rel="canonical" href="/2008/04/how-to-create-an-asp.net-captcha-control-part-1/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@ There are some variations on CAPTCHA tests, the most common one requiring the us
     
       
       
-      <link rel="stylesheet" href="https://www.driis.dk/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
+      <link rel="stylesheet" href="/css/coder.min.a4f332213a21ce8eb521670c614470c58923aaaf385e2a73982c31dd7642decb.css" integrity="sha256-pPMyITohzo61IWcMYURwxYkjqq84XipzmCwx3XZC3ss=" crossorigin="anonymous" media="screen" />
     
 
     
@@ -51,15 +51,15 @@ There are some variations on CAPTCHA tests, the most common one requiring the us
     
 
     
-      <link rel="stylesheet" href="https://www.driis.dk/css/custom.css" />
+      <link rel="stylesheet" href="/css/custom.css" />
     
 
     
 
     
 
-    <link rel="icon" type="image/png" href="https://www.driis.dk/img/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="https://www.driis.dk/img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
 
     <meta name="generator" content="Hugo 0.68.3" />
   </head>
@@ -70,7 +70,7 @@ There are some variations on CAPTCHA tests, the most common one requiring the us
     <main class="wrapper">
       <nav class="navigation">
   <section class="container">
-    <a class="navigation-title" href="https://www.driis.dk/">
+    <a class="navigation-title" href="/">
       Dennis Riis Personal Site
     </a>
     
@@ -80,11 +80,11 @@ There are some variations on CAPTCHA tests, the most common one requiring the us
       
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://www.driis.dk/posts/">Blog</a>
+            <a class="navigation-link" href="/posts/">Blog</a>
           </li>
         
           <li class="navigation-item">
-            <a class="navigation-link" href="https://www.driis.dk/about/">About</a>
+            <a class="navigation-link" href="/about/">About</a>
           </li>
         
       
@@ -124,7 +124,7 @@ There are some variations on CAPTCHA tests, the most common one requiring the us
       <div>
         
         
-		<p>As I explained in my <a href="https://www.driis.dk/" shape="rect">previous post</a>, I developed a <a href="http://en.wikipedia.org/wiki/Captcha" title="CAPTCHA on Wikipedia" shape="rect">CAPTCHA </a>ASP.NET control for this blog. In the next few posts, I will explain the steps involved in doing this, and how you can develop your own CAPTCHA control.</p>
+		<p>As I explained in my <a href="/" shape="rect">previous post</a>, I developed a <a href="http://en.wikipedia.org/wiki/Captcha" title="CAPTCHA on Wikipedia" shape="rect">CAPTCHA </a>ASP.NET control for this blog. In the next few posts, I will explain the steps involved in doing this, and how you can develop your own CAPTCHA control.</p>
 <p><strong>Preparations<br /></strong>There are some variations on CAPTCHA tests, the most common one requiring the user to input the characters displayed on an image. The idea is that only a human will be able to read these characters; so if the challenge response is correct, it is most likely a &quot;real human&quot; submitting the data. Since modern OCR software can be quite efficient, it is neccessary to make the charaters hard-to-read by altering shape, adding noise or lines. Of course these measures also make the CAPTCHA harder to read for a human. For my CAPTCHA control, I decided to create a control, that emphasizes on ease-of-use for the end user. Therefore, the images generated should be easy to read.</p>
 <p>When deciding which characters to display on the image, there are generally two approaches: Generate some randomly, or choose between a pre-defined set of words. I choose the latter approach, since it would be easiest for a human to recognize an actual word. Therefore, I am storing a list of English words, from which I select one randomly whenever I need to generate a CAPTCHA.</p>
 <p><strong>Step one: Creating the basic control<br /></strong>I have chosen to implement the CAPTCHA as a UserControl, so that the look and/or different parts of the control can be changed at a later time, if I need to do so. So I created a UserControl and placed an image tag and a textbox on it. These are the essential parts of the CAPTCHA control.</p>

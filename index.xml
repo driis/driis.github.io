@@ -12,15 +12,6 @@
     
     
     <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Sun, 12 Apr 2020 20:31:07 +0200</pubDate>
-      
-      <guid>/about/</guid>
-      <description>My name is Dennis Riis, and I do software for a living. I am currently employed at eBay Classifieds, in Århus, Dennmark, where I am the lead architect - technically responsible for the technology, quality and code for the 3 main platforms offered by eBay in Denmark: DBA, Bilbasen and BilInfo. I started my stint at eBay as a Backend Engineer, coming from a similar role at the e-commerce agency Impact.</description>
-    </item>
-    
-    <item>
       <title>What is TypeScript and why should I care ? </title>
       <link>/2012/10/what-is-typescript/</link>
       <pubDate>Fri, 05 Oct 2012 17:05:10 +0200</pubDate>
